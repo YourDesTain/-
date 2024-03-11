@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Специальное обеспечение информационных систем</title>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="container">
+            <input type="password" id="passwordInput" placeholder="Введите пароль">
+            <button onclick="checkPassword()" class="btn">Проверка пароля</button>
+            <p id="resultMessage"></p>
+        </div>
+    
+        <div class="container">
+            <input type="text" id="colorInput" placeholder="Введите цвет">
+            <button id="checkButton" class="btn">Проверить цвет</button>
+            <div id="result"></div>
+        </div>
+    
+        <div class="container">
+            <textarea id="expression" rows="4" cols="50" placeholder="Введите математическое выражение"></textarea><br>
+            <button onclick="tokenizeExpression()" class="btn">Токенизация</button>
+            <div id="tokens"></div>
+        </div>
+    
+        <div class="container">
+            <input type="text" id="dateInput" placeholder="Введите дату">
+            <button onclick=checkDate() class="btn">Проверить дату</button>
+            <p id="resultDate"></p>
+        </div>
+    </div>
+    <div class="info-container">
+        <div сlass="block">
+            <p class="primer"> Примеры корректных паролей:</p> <br>   
+ rtG3FG!Tr^e<br>
+ aA1!*!1Aa<br>
+ oF^a1D@y5e6<br>
+ enroi#$rkdeR#$092uwedchf34tguv394h<br>
+             <p class="primer"> Примеры некорректных паролей:</p> <br>
+ пароль<br>
+ password<br>
+ qwerty<br>
+ lOngPa$$W0Rd<br>
+        </div>
+        <div сlass="block">
+            <p class="primer"> Примеры корректных цветов:</p> <br>   
+ #21f48D<br>
+ #888<br>
+ rgb(255, 255,255)<br>
+ rgb(10%, 20%, 0%)<br>
+ hsl(200,100%,50%)<br>
+ hsl(0, 0%, 0%)<br>
+             <p class="primer"> Примеры некорректных цветов:</p> <br>
+ #2345<br>
+ ffffff<br>
+ rgb(257, 50, 10)<br>
+ hsl(20, 10, 0.5)<br>
+ hsl(34%, 20%, 50%)<br>
+        </div>
+        <div сlass="block">
+            <p class="primer"> Примеры выражений и ожидаемых токенов:</p> <br>   
+            * выражение: "sin(x) + cos(y) * 2.5"<br> 
+            токены:<br> 
+            {"type": "function", "span": [0, 3]},<br> 
+            {"type": "left_parenthesis", "span": [3, 4]},<br> 
+            {"type": "variable", "span": [4, 5]},<br> 
+            {"type": "right_parenthesis", "span": [5, 6]},<br> 
+            {"type": "operator", "span": [7, 8]},<br> 
+            {"type": "function", "span": [9, 12]},<br> 
+            {"type": "left_parenthesis", "span": [12, 13]},<br> 
+            {"type": "variable", "span": [13, 14]},<br> 
+            {"type": "right_parenthesis", "span": [14, 15]},<br> 
+            {"type": "operator", "span": [16, 17]},<br> 
+            {"type": "number", "span": [18, 21]}<br> 
+            * выражение: "pi + usO5NlMvU"<br> 
+            токены:<br> 
+            {"type": "constant", "span": [0, 2]},<br> 
+            {"type": "operator", "span": [6, 7]},<br> 
+            {"type": "variable", "span": [15, 24]}<br> 
+            * выражение: "( 63393394.98 /8505 )"<br> 
+            токены:<br> 
+            {"type": "left_parenthesis", "span": [0, 1]},<br> 
+            {"type": "number", "span": [10, 21]},<br> 
+            {"type": "operator", "span": [22, 23]},<br> 
+            {"type": "number", "span": [23, 27]},<br> 
+            {"type": "right_parenthesis", "span": [33, 34]}<br> 
+        </div>
+        <div сlass="block">
+            <p class="primer"> Примеры корректных дат:</p> <br>   
+ 20 января 1806<br> 
+ 1924, July 25<br> 
+ 26/09/1635<br> 
+ 3.1.1506<br> 
+             <p class="primer"> Примеры некорректных дат:</p> <br>
+ 25.08-1002<br> 
+ декабря 19, 1838<br> 
+ 8.20.1973<br> 
+ Jun 7, -1563<br> 
+        </div>
+    </div>
+
+
+    <script src="js.js"></script>
+    <script src="read_file.js"></script>
+</body>
+</html>
