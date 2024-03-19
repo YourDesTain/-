@@ -86,7 +86,7 @@ function tokenizeExpression() {
   //4 ЗАДАЧА
   function checkDate() {
     var inputDate = document.getElementById("dateInput").value;
-    var dateRegex = /^(0?[1-9]|[12][0-9]|3[01])[\.\/\-]?(0?[1-9]|1[0-2])[\.\/\-]?(?:((?:1[6-9]|[2-9]\d)\d{2})|(?!0{2})\d{2})$|^((?:1[6-9]|[2-9]\d)\d{2})[\.\/\-]?(0?[1-9]|1[0-2])[\.\/\-]?(0?[1-9]|[12][0-9]|3[01])$|^((0?[1-9]|[12][0-9]|3[01])[\s](января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)[\s](?!0{2})\d{2,4})$|^((January|February|March|April|May|June|July|August|September|October|November|December)\s(0?[1-9]|[12][0-9]|3[01]),\s((?:1[6-9]|[2-9]\d)\d{2}))$|^((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(0?[1-9]|[12][0-9]|3[01]),\s((?:1[6-9]|[2-9]\d)\d{2}))$|^((?:1[6-9]|[2-9]\d)\d{2},\s(January|February|March|April|May|June|July|August|September|October|November|December)\s(0?[1-9]|[12][0-9]|3[01]))$|^((?:1[6-9]|[2-9]\d)\d{2},\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(0?[1-9]|[12][0-9]|3[01]))$/;
+    var dateRegex = /^(0?[1-9]|[12][0-9]|30)[\.\/\-]?(0?[1-9]|1[0-2])[\.\/\-]?(?:((?:1[6-9]|[2-9]\d)\d{2})|(?!0{2})\d{2})$|^((?:1[6-9]|[2-9]\d)\d{2})[\.\/\-]?(0?[1-9]|1[0-2])[\.\/\-]?(0?[1-9]|[12][0-9]|3[01])$|^((0?[1-9]|[12][0-9]|30)[\s](января|апреля|июня|сентября|ноября)[\s](?!0{2})\d{2,4})$|^((January|April|June|September|November)\s(0?[1-9]|[12][0-9]|30),\s((?:1[6-9]|[2-9]\d)\d{2}))$|^((Jan|Apr|Jun|Sep|Nov)\s(0?[1-9]|[12][0-9]|30),\s((?:1[6-9]|[2-9]\d)\d{2}))$|^((?:1[6-9]|[2-9]\d)\d{2},\s(January|April|June|September|November)\s(0?[1-9]|[12][0-9]|30))$|^((?:1[6-9]|[2-9]\d)\d{2},\s(Jan|Apr|Jun|Sep|Nov)\s(0?[1-9]|[12][0-9]|30))$/;
     var isValid = dateRegex.test(inputDate);
     var resultElement = document.getElementById("resultDate");
     if (isValid) {
